@@ -1,0 +1,541 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #07090d;
+    color: white;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    height: 75px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 7%;
+
+    background: #080a0f;
+
+    border-bottom: 1px solid #20242c;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 900;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: #00e676;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #aeb5c0;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #00e676;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    text-align: center;
+
+    padding: 110px 20px 100px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(0, 230, 118, 0.12),
+            transparent 50%
+        );
+}
+
+.badge {
+    color: #00e676;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 7vw, 85px);
+
+    line-height: 0.98;
+
+    margin-bottom: 25px;
+}
+
+.hero-text {
+    color: #aeb5c0;
+
+    font-size: 18px;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.6;
+}
+
+.hero-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    background: #00e676;
+
+    color: #001b0d;
+
+    padding: 16px 28px;
+
+    border-radius: 8px;
+
+    text-decoration: none;
+
+    font-weight: bold;
+}
+
+.hero-button:hover {
+    background: #00ff83;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.calculator-section,
+.games-section,
+.about-section {
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 90px 20px;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 35px;
+}
+
+.section-title p {
+    color: #00e676;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.section-title h2 {
+    margin-top: 10px;
+
+    font-size: 36px;
+}
+
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.calculator {
+    background: #10131a;
+
+    border: 1px solid #252a34;
+
+    border-radius: 16px;
+
+    padding: 35px;
+}
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+.input-group {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 9px;
+}
+
+.input-group label {
+    color: #d8dde5;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+select {
+    width: 100%;
+
+    background: #080a0f;
+
+    color: white;
+
+    border: 1px solid #303640;
+
+    border-radius: 8px;
+
+    padding: 15px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+select:focus {
+    border-color: #00e676;
+}
+
+.calculate-button {
+    width: 100%;
+
+    margin-top: 30px;
+
+    padding: 17px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #00e676;
+
+    color: #001b0d;
+
+    font-weight: 900;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.calculate-button:hover {
+    background: #00ff83;
+}
+
+
+/* =========================
+   RESULT
+========================= */
+
+.result-section {
+    max-width: 800px;
+
+    margin: auto;
+
+    padding: 30px 20px 80px;
+}
+
+.hidden {
+    display: none;
+}
+
+.result-card {
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(0, 230, 118, 0.12),
+            transparent 60%
+        ),
+        #10131a;
+
+    border: 1px solid #252a34;
+
+    border-radius: 18px;
+
+    padding: 45px;
+}
+
+.result-label {
+    color: #9ca5b3;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+}
+
+.fps-number {
+    color: #00e676;
+
+    font-size: 90px;
+
+    font-weight: 900;
+
+    margin-top: 10px;
+}
+
+.fps-range {
+    color: #9ca5b3;
+
+    margin-bottom: 35px;
+}
+
+.result-info {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid #292e37;
+
+    border-bottom: 1px solid #292e37;
+
+    padding: 25px 0;
+
+    gap: 15px;
+}
+
+.result-info div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.result-info span {
+    color: #858d99;
+
+    font-size: 13px;
+}
+
+.result-info strong {
+    font-size: 17px;
+}
+
+
+/* PERFORMANCE */
+
+.performance {
+    margin-top: 30px;
+}
+
+.performance p {
+    color: #9ca5b3;
+
+    margin-bottom: 10px;
+}
+
+.performance-bar {
+    height: 10px;
+
+    background: #292e37;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+#performanceFill {
+    height: 100%;
+
+    width: 0%;
+
+    background: #00e676;
+
+    transition: width 0.7s ease;
+}
+
+#performanceText {
+    display: block;
+
+    margin-top: 12px;
+
+    color: #00e676;
+}
+
+
+/* SYSTEM SUMMARY */
+
+.system-summary {
+    margin-top: 35px;
+
+    padding: 20px;
+
+    background: #080a0f;
+
+    border-radius: 10px;
+}
+
+.system-summary h3 {
+    margin-bottom: 10px;
+}
+
+.system-summary p {
+    color: #9ca5b3;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   GAMES
+========================= */
+
+.game-list {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+}
+
+.game-item {
+    padding: 20px;
+
+    background: #10131a;
+
+    border: 1px solid #252a34;
+
+    border-radius: 10px;
+
+    font-weight: bold;
+}
+
+.game-item:hover {
+    border-color: #00e676;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-section {
+    text-align: center;
+
+    max-width: 800px;
+}
+
+.about-section h2 {
+    font-size: 35px;
+
+    margin-bottom: 20px;
+}
+
+.about-section p {
+    color: #9ca5b3;
+
+    line-height: 1.7;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top: 1px solid #20242c;
+
+    padding: 40px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+footer p {
+    color: #707884;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    header {
+        padding: 0 20px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .hero {
+        padding-top: 80px;
+    }
+
+    .calculator {
+        padding: 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .result-card {
+        padding: 30px 20px;
+    }
+
+    .fps-number {
+        font-size: 65px;
+    }
+
+    .result-info {
+        grid-template-columns: 1fr;
+    }
+
+    .game-list {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 15px;
+
+        text-align: center;
+    }
+}

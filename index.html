@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FPS Checker</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <div class="logo">
+            FPS<span>CHECKER</span>
+        </div>
+
+        <nav>
+            <a href="#calculator">Calculator</a>
+            <a href="#games">Games</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+
+    <main>
+
+        <section class="hero">
+
+            <p class="badge">
+                PC PERFORMANCE CALCULATOR
+            </p>
+
+            <h1>
+                How many FPS<br>
+                can your PC get?
+            </h1>
+
+            <p class="hero-text">
+                Enter your PC specifications and game settings
+                to estimate your gaming FPS.
+            </p>
+
+            <a href="#calculator" class="hero-button">
+                Check My FPS
+            </a>
+
+        </section>
+
+
+        <section id="calculator" class="calculator-section">
+
+            <div class="section-title">
+
+                <p>FPS CALCULATOR</p>
+
+                <h2>
+                    Enter your PC specs
+                </h2>
+
+            </div>
+
+
+            <div class="calculator">
+
+                <div class="form-grid">
+
+
+                    <!-- CPU -->
+
+                    <div class="input-group">
+
+                        <label for="cpu">
+                            CPU
+                        </label>
+
+                        <select id="cpu">
+
+                            <option value="">
+                                Select your CPU
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- GPU -->
+
+                    <div class="input-group">
+
+                        <label for="gpu">
+                            GPU
+                        </label>
+
+                        <select id="gpu">
+
+                            <option value="">
+                                Select your GPU
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- RAM -->
+
+                    <div class="input-group">
+
+                        <label for="ram">
+                            RAM
+                        </label>
+
+                        <select id="ram">
+
+                            <option value="8">
+                                8 GB
+                            </option>
+
+                            <option value="16" selected>
+                                16 GB
+                            </option>
+
+                            <option value="32">
+                                32 GB
+                            </option>
+
+                            <option value="64">
+                                64 GB
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- RAM CHANNEL -->
+
+                    <div class="input-group">
+
+                        <label for="channel">
+                            RAM Configuration
+                        </label>
+
+                        <select id="channel">
+
+                            <option value="single">
+                                Single Channel
+                            </option>
+
+                            <option value="dual" selected>
+                                Dual Channel
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- GAME -->
+
+                    <div class="input-group">
+
+                        <label for="game">
+                            Game
+                        </label>
+
+                        <select id="game">
+
+                            <option value="">
+                                Select a game
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- RESOLUTION -->
+
+                    <div class="input-group">
+
+                        <label for="resolution">
+                            Resolution
+                        </label>
+
+                        <select id="resolution">
+
+                            <option value="1080">
+                                1920 × 1080
+                            </option>
+
+                            <option value="1440">
+                                2560 × 1440
+                            </option>
+
+                            <option value="2160">
+                                3840 × 2160
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- GRAPHICS -->
+
+                    <div class="input-group">
+
+                        <label for="graphics">
+                            Graphics Quality
+                        </label>
+
+                        <select id="graphics">
+
+                            <option value="low">
+                                Low
+                            </option>
+
+                            <option value="medium">
+                                Medium
+                            </option>
+
+                            <option value="high" selected>
+                                High
+                            </option>
+
+                            <option value="ultra">
+                                Ultra
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- UPSCALING -->
+
+                    <div class="input-group">
+
+                        <label for="upscaling">
+                            Upscaling
+                        </label>
+
+                        <select id="upscaling">
+
+                            <option value="off">
+                                Off
+                            </option>
+
+                            <option value="quality">
+                                Quality
+                            </option>
+
+                            <option value="balanced">
+                                Balanced
+                            </option>
+
+                            <option value="performance">
+                                Performance
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="calculateBtn"
+                    class="calculate-button"
+                >
+                    CALCULATE FPS
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RESULT -->
+
+        <section
+            id="resultSection"
+            class="result-section hidden"
+        >
+
+            <div class="result-card">
+
+                <p class="result-label">
+                    ESTIMATED FPS
+                </p>
+
+                <div
+                    id="fpsResult"
+                    class="fps-number"
+                >
+                    0
+                </div>
+
+                <p
+                    id="fpsRange"
+                    class="fps-range"
+                >
+                    0 - 0 FPS
+                </p>
+
+
+                <div class="result-info">
+
+                    <div>
+
+                        <span>
+                            Average
+                        </span>
+
+                        <strong id="averageFPS">
+                            0 FPS
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            1% Low
+                        </span>
+
+                        <strong id="lowFPS">
+                            0 FPS
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Resolution
+                        </span>
+
+                        <strong id="resultResolution">
+                            1080p
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="performance">
+
+                    <p>
+                        Performance
+                    </p>
+
+                    <div class="performance-bar">
+
+                        <div id="performanceFill"></div>
+
+                    </div>
+
+                    <strong id="performanceText">
+                        -
+                    </strong>
+
+                </div>
+
+
+                <div class="system-summary">
+
+                    <h3>
+                        Your PC
+                    </h3>
+
+                    <p id="systemSummary">
+                        -
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- GAMES -->
+
+        <section
+            id="games"
+            class="games-section"
+        >
+
+            <div class="section-title">
+
+                <p>
+                    SUPPORTED GAMES
+                </p>
+
+                <h2>
+                    Games you can test
+                </h2>
+
+            </div>
+
+            <div
+                id="gameList"
+                class="game-list"
+            ></div>
+
+        </section>
+
+
+        <!-- ABOUT -->
+
+        <section
+            id="about"
+            class="about-section"
+        >
+
+            <h2>
+                How does FPS Checker work?
+            </h2>
+
+            <p>
+                FPS Checker combines your CPU, GPU, RAM,
+                resolution, graphics settings and game
+                selection to estimate gaming performance.
+            </p>
+
+            <p>
+                Actual FPS can vary depending on drivers,
+                temperatures, power limits, background
+                applications and game updates.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <div class="logo">
+            FPS<span>CHECKER</span>
+        </div>
+
+        <p>
+            FPS estimates are for informational purposes.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
